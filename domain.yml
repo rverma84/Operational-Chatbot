@@ -1,0 +1,107 @@
+version: '2.0'
+config:
+  store_entities_as_slots: true
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
+intents:
+- greet:
+    use_entities: true
+- goodbye:
+    use_entities: true
+- affirm:
+    use_entities: true
+- deny:
+    use_entities: true
+- mood_great:
+    use_entities: true
+- mood_unhappy:
+    use_entities: true
+- bot_challenge:
+    use_entities: true
+- select_query_with_limit:
+    use_entities: true
+- find_status_of_job:
+    use_entities: true
+- incidents_created:
+    use_entities: true
+- restarted_jobs:
+    use_entities: true
+- all_jobs:
+    use_entities: true
+- all_jobs_status:
+    use_entities: true
+- job_status_product:
+    use_entities: true
+- job_status_name:
+    use_entities: true
+- job_runtime:
+    use_entities: true
+- latest_job_status:
+    use_entities: true
+- sub_job_details:
+    use_entities: true
+- find_path:
+    use_entities: true
+- find_estatus_feedname:
+    use_entities: true
+- find_emails:
+    use_entities: true
+- find_extract:
+    use_entities: true
+- find_rally:
+    use_entities: true
+- find_planscheduledstarttime:
+    use_entities: true
+- query_link:
+    use_entities: true
+- help_me:
+    use_entities: true
+entities:
+- limit
+- date
+- product
+- status
+- jobname
+- path
+- estatus
+- file
+- key
+slots: {}
+responses:
+  utter_greet:
+  - text: Hey there! This is DbBot. How can I help you?
+  utter_cheer_up:
+  - image: https://i.imgur.com/nGF1K8f.jpg
+    text: 'Here is something to cheer you up:'
+  utter_did_that_help:
+  - text: Did that help you?
+  utter_happy:
+  - text: Great, carry on!
+  utter_goodbye:
+  - text: Bye
+  utter_iamabot:
+  - text: I am a bot, powered by Rasa.
+  utter_helpmebot:
+  - text: Alright! To see the full list, Click [here](https://github.com/palakYadav97/Rasa-Chatbot/blob/main/README.md)
+actions:
+- action_get_query
+- action_get_status
+- action_all_jobs
+- action_job_status
+- action_job_product
+- action_job_name
+- action_incidents
+- action_job_restart
+- action_run_time
+- action_latest_job_status
+- action_sub_job
+- action_path
+- action_estatus_feedname
+- action_emails
+- action_extract
+- action_rally
+- action_planscheduledstarttime
+- action_query_link
+forms: {}
+e2e_actions: []
